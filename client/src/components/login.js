@@ -22,7 +22,6 @@ const Login = () => {
     })
       .then((loginData) => {
         localStorage.setItem("authorization", loginData.data.authToken);
-        console.log(loginData.data.email)
         Navigate("/data");
       })
       .catch((err) => {

@@ -2,26 +2,28 @@
     border-radius: 0 150px 150px 0;
     height: 6vh;
     width: 6vh;
-    margin-left: -4%;
+    margin-left: -65%;
     margin-top: 22px;
 }
 .PPPID{
     margin-right: 0%;
     width: 30vh;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     height: 35px;
+    padding-left: 10px;
     border-radius: 50px;
 }
 .a2{
     display: flex;
+    justify-content: space-between;
     width: 100%;
 }
 .btn3{
     border-radius: 60px;
-    margin-left: 500px;
     width: 20vh;
     cursor: pointer;
+    margin-right: 40px;
 }
 .body{
     width: 90%;
