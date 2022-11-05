@@ -51,12 +51,13 @@ const Table = () => {
         {allPost
           .filter((val) => {
             if (searchTerm === "") {
+              console.log(val)
               return val;
             } else {
               return val.PropertyType.toLowerCase().includes(
                 searchTerm.toLowerCase()
-              );
-            }
+              )
+            } 
           })
           .map((ele) => {
             return (
@@ -72,9 +73,9 @@ const Table = () => {
                     <td className="cell">{ele.Area}</td>
                     <td className="cell">{parseInt(Math.random() * 10)}</td>
                     <td className="cell">
-                      <button className="soldstatus" >{ele.Ownership}</button>
+                      <button className="soldstatus" >{ele.Ownership==="sold"?"sold":"unsold"}</button>
                       </td>
-                    <td className="cell">{parseInt(Math.random() * 100)}</td>
+                    <td className="cell">{ele.Ownership==="sold"?0 :10}</td>
                     <td className="cell">
                       <img src="i.png" alt="img" className="i3"></img>
                       <img src="edit.png" alt="img" className="i3"></img>

@@ -7,17 +7,21 @@ const Header = () => {
             localStorage.setItem("authorization", "");
             Navigate("/");
         }
+    
+  const email =localStorage.getItem("email");
+
+let username = email.slice(0,email.length-10);
     return (
         <>
         <div className="headerbody">
          <div  className="wrapper">
              <div className="logo">
-                 <h2>User ID:06PP125</h2>
+                 <h2>User ID:{email}</h2>
              </div>
              <div className="right-menu">
                 <nav>
                 <img src="userprofile.svg" alt=""></img> 
-                <h5>User</h5>
+                <h5>{username}</h5>
                 <img className="menu-button" src="down.png" alt=""></img>
                 </nav>
                 <div className="dropdown-menu">

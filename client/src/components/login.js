@@ -12,7 +12,7 @@ const Login = () => {
   const Tooglebtn = () => {
     setEye((prevEye) => !prevEye);
   };
-
+  localStorage.setItem("email", state.email);
   const handleLogin = () => {
     axios({
       url: "http://localhost:3000/",
@@ -22,6 +22,7 @@ const Login = () => {
     })
       .then((loginData) => {
         localStorage.setItem("authorization", loginData.data.authToken);
+        console.log(loginData.data.email)
         Navigate("/data");
       })
       .catch((err) => {

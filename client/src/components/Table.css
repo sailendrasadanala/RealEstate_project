@@ -65,8 +65,9 @@ div .body{
 }
 
 .soldstatus{
-    width:40px;
+    width:60px;
     height: 40px;
     background-color: #F5FAF5;
     color: #284E91;
+    cursor: pointer;
 }
