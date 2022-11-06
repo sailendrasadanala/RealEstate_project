@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
         type:String,
         default:"Yes"
     },
-    Price:String,
+    Price:Number,
     Ownership:{
         type:String,
         default:"sold"  
@@ -24,12 +24,12 @@ const postSchema = new mongoose.Schema({
         type:String,
         default:"Yes" 
     },
-    length1:String,
+    length:String,
     Breath:String,
-    Area:Number,
+    Area:String,
     AreaUnit:String,
     bhk:String,
-    floor:Number,
+    floor:String,
     Furnished:String,
     car:String,
     Lift:String,
@@ -37,19 +37,18 @@ const postSchema = new mongoose.Schema({
     Facing:String,
     name:String,
     mobile:Number,
-    poster:String,
+    posted_by:String,
     sale:String,
     fp:String,
     Pp:String,
     Email:String,
-      city:String,
-      area:String,
-      pincode:Number,
-      Address:String,
-      landmark:String,
-      lalitude:String,
-      longitude:String,
-      bhk:String
+    City:String,
+    AreaField:String,
+    Pincode:String,
+    Address:String,
+    Landmark:String,
+    Latitude:String,
+    Longitude:String
 })
 
 const  postModal = mongoose.model("post",postSchema)

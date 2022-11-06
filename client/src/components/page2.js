@@ -8,7 +8,7 @@ const Page2 = () => {
   let navigate = useNavigate();
   let name1, value1;
   const [data, setData] = useState({
-    length1: "",
+    length: "",
     Breath: "",
     Area: "",
     AreaUnit: "",
@@ -29,7 +29,7 @@ const Page2 = () => {
 
   const sendData1 = async (e) => {
     const {
-      length1,
+      length,
       Breath,
       Area,
       AreaUnit,
@@ -41,7 +41,7 @@ const Page2 = () => {
       Electricity,
       Facing,
     } = data;
-    localStorage.setItem("length1", length1);
+    localStorage.setItem("length", length);
     localStorage.setItem("Breath", Breath);
     localStorage.setItem("Area", Area);
     localStorage.setItem("AreaUnit", AreaUnit);
@@ -73,9 +73,10 @@ const Page2 = () => {
               <h3>Length</h3>
 
               <input
-                id="length1"
+                id="length"
                 className="opt"
                 placeholder=" Example:1000"
+                name="length"
                 onChange={handelInput1}
               ></input>
             </div>
@@ -87,6 +88,7 @@ const Page2 = () => {
                 id="Breath"
                 className="opt"
                 placeholder=" Example:1000"
+                name="Breath"
                 onChange={handelInput1}
               ></input>
             </div>
@@ -107,7 +109,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Area Unit</h3>
 
-              <select id="AreaUnit" className="opt" onChange={handelInput1}>
+              <select id="AreaUnit" className="opt" name="AreaUnit" onChange={handelInput1}>
                 <option value="Select Area Unit">Select Area Unit</option>
                 <option value="sq.feet">sq.feet</option>
                 <option value="sq.yards">sq.yards</option>
@@ -119,7 +121,7 @@ const Page2 = () => {
             <div className="two">
               <h3>No of BHK</h3>
 
-              <select id="bhk" className="opt" onChange={handelInput1}>
+              <select id="bhk" className="opt" name="bhk" onChange={handelInput1}>
                 <option value="Select No of Bhk">Select No of BHK</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -130,7 +132,7 @@ const Page2 = () => {
             <div className="two">
               <h3>No of Floor</h3>
 
-              <select id="floor" className="opt" onChange={handelInput1}>
+              <select id="floor" className="opt" name='floor' onChange={handelInput1}>
                 <option value="Select No of Floor">Select No of Floor</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -144,7 +146,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Attached</h3>
 
-              <select id="Attached" className="opt" onChange={handelInput1}>
+              <select id="Attached" className="opt" name='Attached' onChange={handelInput1}>
                 <option>Select Attached</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -157,6 +159,7 @@ const Page2 = () => {
               <select
                 id="Westerntoilet"
                 className="opt"
+                name="Westerntoilet"
                 onChange={handelInput1}
               >
                 <option value="Westerntoilet">select Westerntoilet</option>
@@ -169,7 +172,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Furnished</h3>
 
-              <select id="Furnished" className="opt" onChange={handelInput1}>
+              <select id="Furnished" className="opt" name="Furnished" onChange={handelInput1}>
                 <option value="SelectFurnished">Select Furnished</option>
                 <option value="yes">Yes</option>
                 <option value="No">No</option>
@@ -179,7 +182,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Car Parking</h3>
 
-              <select id="car" className="opt" onChange={handelInput1}>
+              <select id="car" className="opt" name='car' onChange={handelInput1}>
                 <option value="selectcarparking">Select Car Parking</option>
                 <option value="yes">Yes</option>
                 <option value="No">No</option>
@@ -190,7 +193,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Lift</h3>
 
-              <select id="Lift" className="opt" onChange={handelInput1}>
+              <select id="Lift" className="opt" name="Lift" onChange={handelInput1}>
                 <option value="selectLift">select Lift</option>
                 <option value="yes">Yes</option>
                 <option value="No">No</option>
@@ -204,6 +207,7 @@ const Page2 = () => {
                 id="Electricity"
                 className="opt"
                 placeholder=" Example:3 phase"
+                name='Electricity'
                 onChange={handelInput1}
               ></input>
             </div>
@@ -212,7 +216,7 @@ const Page2 = () => {
             <div className="two">
               <h3>Facing</h3>
 
-              <select id="Facing" className="opt" onChange={handelInput1}>
+              <select id="Facing" className="opt" name='Facing' onChange={handelInput1}>
                 <option value="selectFacing">Select Facing</option>
                 <option value="East">East</option>
                 <option value="West">West</option>
@@ -227,11 +231,9 @@ const Page2 = () => {
           <a href="/p1">
             <button className="btn15">Previous</button>
           </a>
-          {/* <a href="/p2"> */}
           <button className="btn15" onClick={sendData1}>
             Save & Continue
           </button>
-          {/* </a> */}
         </div>
       </div>
     </>

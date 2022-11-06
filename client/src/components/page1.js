@@ -101,8 +101,7 @@ const Page1 = () => {
                 onChange={handleInput}
               ></input>
             </div>
-            {/* </div>
-            <div className="type"> */}
+          
             <div className="two">
               <h3>Ownership</h3>
 
@@ -160,7 +159,7 @@ const Page1 = () => {
                 onChange={handleInput}
               ></input>
             </div>
-            {/* <div className="type"> */}
+
             <div className="two">
               <h3>Bank Loan</h3>
 
@@ -180,7 +179,7 @@ const Page1 = () => {
             <a href="/data">
               <button className="btn15">Cancel</button>
             </a>
-            {/* <a href="/p2"> */}
+            
             <button className="btn15" onClick={saveData}>
               Save & Continue
             </button>

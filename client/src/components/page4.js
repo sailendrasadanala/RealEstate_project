@@ -17,7 +17,7 @@ const Page4=()=>{
       PropertyApproved:localStorage.getItem("PropertyApproved"),
       PropertyDiscription:localStorage.getItem("PropertyDiscription"),
       BankLoan:localStorage.getItem("BankLoan"),
-      length1:localStorage.getItem("length1"),
+      length:localStorage.getItem("length"),
       Breath:localStorage.getItem("Breath"),
       Area:localStorage.getItem("Area"),
       AreaUnit:localStorage.getItem("AreaUnit"),
@@ -36,7 +36,7 @@ const Page4=()=>{
       Pp:localStorage.getItem("Pp"),
         Email: "",
       city: "",
-      area:"",
+      AreaField:"",
       pincode: "",
       Address: "",
       landmark: "",
@@ -60,7 +60,7 @@ const Page4=()=>{
           PropertyApproved,
           PropertyDiscription,
           BankLoan,
-          length1,
+          length,
           Breath,
           Area,
           AreaUnit,
@@ -79,12 +79,12 @@ const Page4=()=>{
           Facing,
         Email,
       city,
-      area,
+      AreaField,
       pincode,
       Address,
-      landmark,
-      lalitude,
-      longitude
+      Landmark,
+      Latitude,
+      Longitude
     } = data;
     await fetch("http://localhost:3000/adding", {
       method: "POST",
@@ -100,7 +100,7 @@ const Page4=()=>{
           PropertyApproved:PropertyApproved,
           PropertyDiscription:PropertyDiscription,
           BankLoan:BankLoan,
-          length1:length1,
+          length:length,
           Breath:Breath,
           Area:Area,
           AreaUnit:AreaUnit,
@@ -119,12 +119,12 @@ const Page4=()=>{
           Pp:Pp,
         Email: Email,
         city: city,
-        area: area,
+        AreaField: AreaField,
         pincode:pincode,
         Address: Address,
-        landmark: landmark,
-        lalitude:lalitude,
-        longitude:longitude
+        Landmark: Landmark,
+        Latitude:Latitude,
+        Longitude:Longitude
       }),
     }).then(() => {
     console.log(data);
@@ -137,15 +137,12 @@ const Page4=()=>{
         <h2 className="all">Add New Property</h2>
 
         <div className="comA">
-          <span className="com" >
-            1.Basic Info
-          </span>
+          <span className="com" >1.Basic Info</span>
           <span className="com">2.Property Details</span>
           <span className="com">3.General info</span>
           <span className="com" id="clr">4.Location Info</span>
         </div>
         <div className="page1inside">
-          
           <div className="type">
             <div className="two">
               <h3>Email</h3>

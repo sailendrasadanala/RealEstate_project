@@ -12,6 +12,12 @@ const app =express();
 require('dotenv').config();
 app.use(multer.array());
 
+const corsOptions = {
+    origin: '*',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
+
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended: false}));
@@ -26,9 +32,9 @@ mongoose.connect('mongodb+srv://sadanalasailendra:Realestate123@cluster0.0dekm.m
     (err)=>console.log(err)
 
 
-    app.listen(process.env.PORT || 3003,(err)=>{
+    app.listen(process.env.PORT || 3000,(err)=>{
         if(!err){
-            console.log('server started at 3003')
+            console.log('server started at 3000')
         }
       })
 
@@ -41,7 +47,7 @@ mongoose.connect('mongodb+srv://sadanalasailendra:Realestate123@cluster0.0dekm.m
                         const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
                         res.status(200).send({authToken});
                     } else {
-                        console.log("Invalid Password")
+                        console.log("Invalid Password");
                         res.status(400).send("Invalid Password");
                     }
                 })
@@ -77,7 +83,7 @@ mongoose.connect('mongodb+srv://sadanalasailendra:Realestate123@cluster0.0dekm.m
             PropertyApproved:req.body.PropertyApproved,
             PropertyDiscription:req.body.PropertyDiscription,
             BankLoan:req.body.BankLoan,
-            length1:req.body.length1,
+            length:req.body.length,
                 Breath:req.body.Breath,
                 Area:req.body.Area,
                 AreaUnit:req.body.AreaUnit,
@@ -96,12 +102,12 @@ mongoose.connect('mongodb+srv://sadanalasailendra:Realestate123@cluster0.0dekm.m
                 Pp:req.body.Pp,
                 Email:req.body.Email,
                 city:req.body.city,
-                area:req.body.area,
+                AreaField:req.body.AreaField,
                 pincode:req.body.pincode,
                 Address:req.body.Address,
-                landmark:req.body.landmark,
-                lalitude:req.body.lalitude,
-                longitude:req.body.longitude
+                Landmark:req.body.Landmark,
+                Latitude:req.body.Latitude,
+                Longitude:req.body.Longitude
 
      })
     .then((data)=>{

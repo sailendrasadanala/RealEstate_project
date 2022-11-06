@@ -81,11 +81,12 @@ const Page3=()=>{
             <div className="two">
               <h3>Posted By</h3>
               <select
-                id="poster"
+                id="posted_by"
                 className="opt"
+                name='posted_by'
                 onChange={handleInput22}
               >
-                <option value="yes">Posted By</option>
+                <option value="postedby">Posted By</option>
                 <option value="Owner">Owner</option>
                 <option value="Broker">Broker</option>
               </select>
@@ -97,6 +98,7 @@ const Page3=()=>{
               <select
                 id="sale"
                 className="opt"
+                name='sale'
                 onChange={handleInput22}
               >
                 <option value="Pleaseselect">Please Select</option>
