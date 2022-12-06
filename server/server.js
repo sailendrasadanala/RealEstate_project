@@ -42,8 +42,8 @@ mongoose.connect('mongodb+srv://sadanalasailendra:Realestate123@cluster0.0dekm.m
         userModel.find({email: req.body.email}).then((userData)=> {
             
             if(userData.length) {
-                bcrypt.compare(req.body.password, userData[0].password).then((val)=> {
-                    if(val) {
+                bcrypt.compare(req.body.password, userData[0].password).then((match)=> {
+                    if(match) {
                         const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
                         res.status(200).send({authToken});
                     } else {
